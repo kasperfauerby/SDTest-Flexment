@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
+    "oneoff": "jest --init",
     "test": "jest"
   },
   "keywords": [],
