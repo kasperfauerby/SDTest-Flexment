@@ -7,6 +7,20 @@ import decode from 'jwt-decode';
 import useStyles from './styles';
 import flexment from '../../images/FlexmentLogo.png'
 
+let dateTime;
+
+// fetch('http://worldtimeapi.org/api/timezone/Europe/Copenhagen').then((response) => response.json()).then((data) => dateTime = data.dateTime);
+const getData = async () => {
+    const response = await fetch("http://worldtimeapi.org/api/timezone/Europe/Copenhagen");
+    const data = await response.json();
+    dateTime = data.datetime;
+    return data;
+  };
+
+(async () => {
+    await getData();
+    console.log(dateTime);
+  })();
 
 const Navbar = () => {
     const classes = useStyles();
