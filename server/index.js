@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { graphqlHTTP } from 'express-graphql';
+
 import schema from "./schema/schema.js";
 
 
