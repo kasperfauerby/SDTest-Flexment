@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { passwordLength } from '../services/UserService';
 
 import UserModel from '../models/userModel.js';
 
@@ -30,6 +31,8 @@ export const signUp = async (req, res) => {
         const existingUser = await UserModel.findOne({ email });
 
         if(existingUser) return res.status(404).json({ message: 'User already exist' });
+
+        //if(!passwordLength(password)) return res.status(404).json({ message: 'Password is invalid' });
 
         if(password !== confirmPassword) return res.status(400).json({ message: 'Passwords doesnt match'})
 
