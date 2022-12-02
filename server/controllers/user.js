@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { passwordLength } from '../services/UserService';
+//import { passwordLength } from '../services/UserService';
 
 import UserModel from '../models/userModel.js';
 
