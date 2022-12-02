@@ -12,6 +12,7 @@
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "axios": "^0.19.2",
+        "chromedriver": "^107.0.3",
         "dotenv": "^16.0.1",
         "graphql": "^16.6.0",
         "jwt-decode": "^3.1.2",
@@ -25,7 +26,8 @@
         "react-router-dom": "^5.3.3",
         "react-scripts": "3.4.1",
         "redux": "^4.2.0",
-        "redux-thunk": "^2.4.1"
+        "redux-thunk": "^2.4.1",
+        "selenium-webdriver": "^4.7.0"
     },
     "scripts": {
         "start": "react-scripts --openssl-legacy-provider start",
