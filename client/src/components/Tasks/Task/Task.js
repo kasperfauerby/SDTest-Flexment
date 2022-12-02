@@ -59,11 +59,11 @@ const Task = ({ task, setCurrentId }) => {
                 </CardContent>
             </ButtonBase>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" disabled={!user?.result} onClick={ () => dispatch(likeTask(task._id)) }>
+                <Button size="small" color="primary" disabled={!user?.result} onClick={ () => dispatch(likeTask(task._id)) } name="likeTask">
                     <Likes />
                 </Button>
                 {(user?.result?.googleId === task?.creator || user?.result?._id === task?.creator) && (    
-                <Button size="small" color="primary" onClick={ () => dispatch(deleteTask(task._id)) }>
+                <Button size="small" color="primary" onClick={ () => dispatch(deleteTask(task._id)) } name="deleteTask">
                     <DeleteIcon fontSize="small" />
                     &nbsp; Delete &nbsp;
                 </Button>)}

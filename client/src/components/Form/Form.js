@@ -56,7 +56,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 <TextField name = 'taskDescription' variant = 'outlined' label = 'Beskrivelse' fullWidth multiline minRows={5} value = {taskData.taskDescription} onChange = {(e) => setTaskData({ ... taskData, taskDescription: e.target.value })}/>
                 <TextField name = 'programmingLanguages' variant = 'outlined' label = 'Teknologier (komma seperaret)' fullWidth value = {taskData.programmingLanguages} onChange = {(e) => setTaskData({ ...taskData, programmingLanguages: e.target.value.split(',') })}/>
                 <div className={classes.fileInput}><FileBase type='File' multiple={false} onDone={({base64}) => setTaskData({ ...taskData, selectedFile: base64 })}></FileBase></div>
-                <Button className={classes.buttonSubmit} variant='contained' size='large' type='submit' fullWidth>Tilføj</Button>
+                <Button className={classes.buttonSubmit} variant='contained' size='large' type='submit' fullWidth name="addTask">Tilføj</Button>
                 <Button className={classes.buttonClear} variant='contained' size='small' onClick={clear} fullWidth>Clear</Button>
             </form>
         </Paper>
