@@ -33,7 +33,7 @@ const Task = ({ task, setCurrentId }) => {
 
     return (
         <Card className={classes.card} raised elevation={6}>
-            <ButtonBase className={classes.cardAction} component="span" name="test" onClick={openTask}>
+            <ButtonBase className={classes.cardAction} component="span" name="task" onClick={openTask}>
                 <CardMedia className={classes.media} image={task.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'}/>
                 <div className={classes.overlay}>
                     <Typography variant="h6">{task.taskName}</Typography>
