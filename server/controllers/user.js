@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-//import { passwordLength } from '../services/UserService';
+import { passwordCharConstrain, nameCharConstrain } from '../services/userService.js';
 
 import UserModel from '../models/userModel.js';
 
@@ -32,9 +32,13 @@ export const signUp = async (req, res) => {
 
         if(existingUser) return res.status(404).json({ message: 'User already exist' });
 
-        //if(!passwordLength(password)) return res.status(404).json({ message: 'Password is invalid' });
+        if(nameCharConstrain(firstName) === false) return res.status(400).json({ message: 'First name is invalid'})
+
+        if(nameCharConstrain(lastName) === false) return res.status(400).json({ message: 'Last name is invalid'})
 
         if(password !== confirmPassword) return res.status(400).json({ message: 'Passwords doesnt match'})
+
+        if(passwordCharConstrain(password) === false) return res.status(400).json({ message: 'Password is invalid'})
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
