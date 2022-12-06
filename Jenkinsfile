@@ -1,15 +1,21 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'NodeJS'
+    }
     stages {
         stage('Build dependencies') {
             steps {
-                sh 'npm -v'
-                sh 'npm install'
+                dir('server'){
+                    sh 'npm install'
+                }
             }
         }
         stage('Test and coverage'){
             steps{
-                sh 'npx jest --coverage'
+                dir('server'){
+                    sh 'npx jest --coverage'
+                }
             }
         }
     }
