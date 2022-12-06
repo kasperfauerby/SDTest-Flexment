@@ -1,6 +1,6 @@
 
 9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -31,7 +31,7 @@ U
 T
 $client/src/components/Tasks/Tasks.js,2\2\22ef34f8b56761a8185727d58a338ab8c49ae3fe
 X
-(client/src/components/Tasks/Task/Task.js,f\d\fd5fbe1162a2ca12dd2ad7e5d597dbb3b7847b3d
+(client/src/components/Tasks/Task/Task.js,f/d/fd5fbe1162a2ca12dd2ad7e5d597dbb3b7847b3d
 R
 "client/src/components/Home/Home.js,1\5\15019695522b2c1be533c8aa8671543d12a69cd6
 K
@@ -62,3 +62,7 @@ I
 server/middleware/auth.js,5\8\58731c2f34308157537b986042391b2bf16a8a0a
 R
 "client/src/components/Auth/Auth.js,8\1\81d3c27ae32bd8f7edf5f087b6396f272d99a7fc
+H
+sonar-project.properties,2/5/2538046035efb77ecc44e1fd2eec1e2641594d4c
+w
+G.idea/sonarlint/issuestore/1/5/15019695522b2c1be533c8aa8671543d12a69cd6,e/7/e7ab516068fefa00ed7a091652d0c887825cb2f5
