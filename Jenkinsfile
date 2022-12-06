@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                sh 'cd server'
-                sh 'npm install'
+        dir('server'){
+            stage('Build dependencies') {
+                steps {
+                    sh 'npm install'
+                }
+            }
+            stage('Test and coverage'){
+                steps{
+                    sh 'npx jest --coverage'
+                }
             }
         }
     }
