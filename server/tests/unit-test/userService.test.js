@@ -7,6 +7,7 @@ test('Password for sign-in complies with constrains', () => {
     expect(pw2).toBe(true);
 });
 
+
 test('Name for sign-in complies with constrains', () => {
     const name1 = nameCharConstrain("n");
     expect(name1).toBe(false);
