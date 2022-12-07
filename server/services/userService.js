@@ -1,4 +1,4 @@
-export function passwordCharConstrain(password) {
+const passwordCharConstrain = (password) => {
     let flag;
 
     if(password.length < 6 || password.length > 32){
@@ -6,11 +6,10 @@ export function passwordCharConstrain(password) {
     } else {
         flag = true;
     }
-
     return flag;
 }
 
-export function nameCharConstrain(name) {
+const nameCharConstrain = (name) => {
     let flag;
 
     if(name.length < 2){
@@ -38,7 +37,7 @@ export function errorMessage(existingUser,firstName, lastName, password, confirm
         return "Password is invalid";
     }
 
-    return "Undefined Error"
+    return false;
 }
 
 export function signUpError(existingUser, firstName, lastName, password, confirmPassword){
@@ -69,3 +68,6 @@ export function signUpError(existingUser, firstName, lastName, password, confirm
 export function fullName(firstName, lastName){
     return firstName.concat(" ", lastName);
 }
+
+exports.passwordCharConstrain = passwordCharConstrain;
+exports.nameCharConstrain = nameCharConstrain;
