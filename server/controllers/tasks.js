@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
 import TaskModel from '../models/taskModel.js'
+import {calculateStartIndex} from '../services/taskService.js';
 
 export const getTasks = async (req, res) => {
     const { page } = req.query;
 
     try {
         const LIMIT = 8;
-        const startIndex = (Number(page) - 1) * LIMIT; // get starting index of every page
+        const startIndex = calculateStartIndex(LIMIT, page); // get starting index of every page
         const total = await TaskModel.countDocuments({});
 
         const tasks = await TaskModel.find().sort({ _id: -1 }).limit(LIMIT).skip(startIndex);

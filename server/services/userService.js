@@ -20,3 +20,52 @@ export function nameCharConstrain(name) {
     }
     return flag;
 }
+
+export function errorMessage(existingUser,firstName, lastName, password, confirmPassword){
+    if(existingUser) {
+        return "User already exist";
+    }
+    if(nameCharConstrain(firstName) === false) {
+        return "First name is invalid";
+    }
+    if(nameCharConstrain(lastName) === false) {
+        return "Last name is invalid";
+    }
+    if(password !== confirmPassword){
+        return "Password doesnt match";
+    }
+    if(passwordCharConstrain(password) === false){
+        return "Password is invalid";
+    }
+
+    return "Undefined Error"
+}
+
+export function signUpError(existingUser, firstName, lastName, password, confirmPassword){
+    let hasError;
+
+    if(existingUser) {
+        hasError = true;
+    }
+    else if(nameCharConstrain(firstName) === false) {
+        hasError = true;
+    }
+    else if(nameCharConstrain(lastName) === false) {
+        hasError = true;
+    }
+    else if(password !== confirmPassword){
+        hasError = true;
+    }
+    else if(passwordCharConstrain(password) === false){
+        hasError = true;
+    }
+    else{
+        hasError = false;
+    }
+
+    return hasError;
+}
+
+export function fullName(firstName, lastName){
+    return firstName.concat(" ", lastName);
+}
