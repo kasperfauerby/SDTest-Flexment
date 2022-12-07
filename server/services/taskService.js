@@ -20,3 +20,7 @@ if(index === -1){
 } else {
     task.likes = task.likes.filter((id) => id !== String(req.userId));
 }*/
+
+export function convertStringToArray(string) {
+    return string.split(", ");
+}

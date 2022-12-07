@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import TaskModel from '../models/taskModel.js'
-import {calculateStartIndex} from '../services/taskService.js';
+import {calculateStartIndex, convertStringToArray} from '../services/taskService.js';
 
 export const getTasks = async (req, res) => {
     const { page } = req.query;
@@ -39,7 +39,7 @@ export const getTasksBySearch = async (req, res) => {
     try {
         const taskName = new RegExp(searchQuery, 'i');
 
-        const tasks = await TaskModel.find({ $or: [ { taskName }, { programmingLanguages: { $in: programmingLanguages.split(',') } } ]});
+        const tasks = await TaskModel.find({ $or: [ { taskName }, { programmingLanguages: { $in: convertStringToArray(programmingLanguages) } } ]});
 
         res.json({ data: tasks });
     } catch (error) {

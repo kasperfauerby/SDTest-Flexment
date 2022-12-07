@@ -15,10 +15,12 @@ test('Name for sign-in complies with constrains', () => {
     expect(name2).toBe(true);
 });
 
+/*
 test('Error message for sign up', () => {
 
-    const firstName = errorMessage("n","");
-    expect(name1).toBe(false);
-    const name2 = nameCharConstrain("Eddy");
-    expect(name2).toBe(true);
-});
+});*/
+
+/*
+test('Sign up error', () => {
+
+});*/
