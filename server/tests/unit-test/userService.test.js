@@ -1,4 +1,4 @@
-const { passwordCharConstrain, nameCharConstrain} = require('../../services/userService.js');
+const { passwordCharConstrain, nameCharConstrain, fullName} = require('../../services/userService.js');
 
 test('Password for sign-in complies with constrains', () => {
     const pw1 = passwordCharConstrain("***");
@@ -12,4 +12,9 @@ test('Name for sign-in complies with constrains', () => {
     expect(name1).toBe(false);
     const name2 = nameCharConstrain("Eddy");
     expect(name2).toBe(true);
+});
+
+test('First and last name should combine to one', () => {
+    const name = fullName("Dean", "Calypso");
+    expect(name).toBe("Dean Calypso");
 });

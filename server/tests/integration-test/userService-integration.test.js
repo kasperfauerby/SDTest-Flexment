@@ -3,8 +3,8 @@ import UserModel from "../../models/userModel.js";
 const {errorMessage} = require("../../services/userService.js");
 
 test('Get error if user already exist', () => {
-    //const newUser = UserModel.findOne({email: "test99999@test.com"});
-    const existingUser = UserModel.findOne({email: "test1@test.com"});
+    //const newUser = UserModel.exists({email: "test99999@test.com"});
+    const existingUser = UserModel.exists({email: "test1@test.com"});
 
     const firstName = "test";
     const lastName = "test";
