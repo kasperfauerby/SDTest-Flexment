@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import {expect, it,describe, jest} from '@jest/globals';
+import {expect, it,describe, jest, afterAll} from '@jest/globals';
 
 afterAll((done) => {
     app.close(() => {
