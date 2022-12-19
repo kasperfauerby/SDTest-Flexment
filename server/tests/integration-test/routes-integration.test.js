@@ -1,17 +1,16 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import {expect, it,describe} from '@jest/globals';
+import {expect, it,describe, jest} from '@jest/globals';
+
+afterAll((done) => {
+    app.close(() => {
+        done();
+    });
+});
 
 describe("Test get tasks", () => {
-
-    beforeEach(() => {
-        return app;
-    });
-
-    afterEach(() => {
-        app.destroy;
-    });
+    jest.useFakeTimers();
 
     it("should return", () => {
         supertest(app).get("/tasks").then((respons) => {
@@ -25,14 +24,7 @@ describe("Test get tasks", () => {
 });
 
 describe("test get /:id", () =>{
-
-    beforeEach(() => {
-        return app;
-    });
-
-    afterEach(() => {
-        app.destroy;
-    });
+    jest.useFakeTimers();
 
     it("should return 200 OK from a specific task", () => {
         supertest(app).get(`/${ObjectId("637df6a4b706869a3b72ee29")}`).expect(200)
@@ -41,14 +33,7 @@ describe("test get /:id", () =>{
 })
 
 describe("Test get users", () => {
-
-    beforeEach(() => {
-        return app;
-    });
-
-    afterEach(() => {
-        app.destroy;
-    });
+    jest.useFakeTimers();
 
     it("should return", () => {
         supertest(app).get("/users").then((respons) => {
@@ -63,18 +48,10 @@ describe("Test get users", () => {
 });
 
 describe("test get /:id", () =>{
-
-    beforeEach(() => {
-        return app;
-    });
-
-    afterEach(() => {
-        app.destroy;
-    });
+    jest.useFakeTimers();
 
     it("should return 200 OK from a specific user", () => {
         supertest(app).get(`/${ObjectId("637df653b706869a3b72ee25")}`).expect(200)
     })
-
 })
 
