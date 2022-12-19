@@ -18,3 +18,9 @@ test('First and last name should combine to one', () => {
     const name = fullName("Dean", "Calypso");
     expect(name).toBe("Dean Calypso");
 });
+
+test('Error message return value', () => {
+    it.each([
+
+    ])
+});

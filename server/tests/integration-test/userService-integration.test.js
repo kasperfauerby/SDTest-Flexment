@@ -1,5 +1,4 @@
 import UserModel from "../../models/userModel.js";
-
 const {errorMessage} = require("../../services/userService.js");
 
 test('Get error if user already exist', () => {

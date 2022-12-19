@@ -1,10 +1,9 @@
-export function calculateStartIndex(pageLimit, page){
-    return (Number(page) - 1) * pageLimit;
+export function calculateStartIndex (pageLimit, page) {
+  return (Number(page) - 1) * pageLimit
 }
 
 /*
 export function addToLikeArray(array, userId){
-
 
     if(index === -1){
         array.push(userId);
@@ -19,8 +18,8 @@ if(index === -1){
     task.likes.push(req.userId);
 } else {
     task.likes = task.likes.filter((id) => id !== String(req.userId));
-}*/
+}   */
 
-export function convertStringToArray(string) {
-    return string.split(", ");
+export function convertStringToArray (string) {
+  return string.split(', ')
 }
