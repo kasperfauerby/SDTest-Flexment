@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "jest": {
     "transform": {
@@ -24,8 +24,10 @@
     "express": "^4.18.1",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.13.0",
     "mongoose": "^6.5.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.3.3"
   },
   "description": "",
   "devDependencies": {

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import TaskModel from '../models/taskModel.js'
+
 import {calculateStartIndex, convertStringToArray} from '../services/taskService.js';
 
 export const getTasks = async (req, res) => {
@@ -20,6 +21,7 @@ export const getTasks = async (req, res) => {
 }
 
 export const getTask = async (req, res) => {
+
     const { id } = req.params;
 
     try {

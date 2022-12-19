@@ -1,8 +1,41 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import {signUpError, errorMessage, fullName} from '../services/userService.js';
+import {calculateStartIndex, signUpError, errorMessage, fullName} from '../services/userService.js';
 
 import UserModel from '../models/userModel.js';
+
+export const getUsers = async (req, res) => {
+    const { page } = req.query;
+
+    try {
+        const LIMIT = 8;
+        const startIndex = calculateStartIndex(LIMIT, page); // get starting index of every page
+        const total = await UserModel.countDocuments({});
+
+        const users = await UserModel.find().sort({ _id: -1 }).limit(LIMIT).skip(startIndex);
+
+        res.status(200).json({ data: users, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT) });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        console.log(error)
+    }
+}
+
+export const getUser = async (req, res) => {
+
+    const { id } = req.params;
+
+    try {
+        const user = await UserModel.findById(id);
+
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        console.log(error)
+        console.log(req.params)
+    }
+}
+
 
 export const signIn = async (req, res) => {
     const { email, password } = req.body;
