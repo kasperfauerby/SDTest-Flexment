@@ -14,7 +14,7 @@ afterAll(done => {
     done()
 })
 
-describe("Test get tasks", (done) => {
+describe("Test get tasks", () => {
     jest.setTimeout(15000);
 
     it("should return", () => {
@@ -27,7 +27,6 @@ describe("Test get tasks", (done) => {
         await supertest(app).get("/tasks").expect(200);
     });
 
-    done();
 });
 
 describe("test get /:id", () =>{
@@ -38,7 +37,7 @@ describe("test get /:id", () =>{
 
 })
 
-describe("Test get users", (done) => {
+describe("Test get users", () => {
     jest.setTimeout(15000);
 
     it("should return", () => {
@@ -51,7 +50,6 @@ describe("Test get users", (done) => {
         await supertest(app).get("/users").expect(200);
     });
 
-    done();
 });
 
 describe("test get /:id", () =>{
