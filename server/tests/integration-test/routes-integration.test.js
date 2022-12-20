@@ -1,9 +1,20 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import {expect, it,describe, jest, afterAll} from '@jest/globals';
+import mongoose from "mongoose";
+import {expect, it,describe, jest, afterAll, beforeAll} from '@jest/globals';
 
-describe("Test get tasks", () => {
+beforeAll(done => {
+    done()
+})
+
+afterAll(done => {
+    // Closing the DB connection allows Jest to exit successfully.
+    mongoose.connection.close()
+    done()
+})
+
+describe("Test get tasks", (done) => {
     jest.setTimeout(15000);
 
     it("should return", () => {
@@ -12,9 +23,11 @@ describe("Test get tasks", () => {
         })
     });
 
-    it("should return a 200", () => {
-        supertest(app).get("/tasks").expect(200);
+    it("should return a 200", async () => {
+        await supertest(app).get("/tasks").expect(200);
     });
+
+    done();
 });
 
 describe("test get /:id", () =>{
@@ -25,7 +38,7 @@ describe("test get /:id", () =>{
 
 })
 
-describe("Test get users", () => {
+describe("Test get users", (done) => {
     jest.setTimeout(15000);
 
     it("should return", () => {
@@ -34,11 +47,11 @@ describe("Test get users", () => {
         } )
     });
 
-    it("should return a 200", () => {
-        supertest(app).get("/users").expect(200);
+    it("should return a 200", async () => {
+        await supertest(app).get("/users").expect(200);
     });
 
-
+    done();
 });
 
 describe("test get /:id", () =>{
