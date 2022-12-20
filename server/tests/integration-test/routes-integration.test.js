@@ -1,15 +1,7 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import {expect, it,describe, jest, afterAll, beforeAll} from '@jest/globals';
-
-beforeAll(() => {
-   const server = app.listen(28123);
-})
-
-afterAll(() => {
-    server.close()
-})
+import {expect, it,describe, jest} from '@jest/globals';
 
 describe("Test get tasks", () => {
     jest.setTimeout(15000);
@@ -20,8 +12,8 @@ describe("Test get tasks", () => {
         })
     });
 
-    it("should return a 200", async () => {
-        await supertest(app).get("/tasks").expect(200);
+    it("should return a 200", () => {
+        supertest(app).get("/tasks").expect(200);
     });
 
 });
@@ -43,8 +35,8 @@ describe("Test get users", () => {
         } )
     });
 
-    it("should return a 200", async () => {
-        await supertest(app).get("/users").expect(200);
+    it("should return a 200",() => {
+        supertest(app).get("/users").expect(200);
     });
 
 });
