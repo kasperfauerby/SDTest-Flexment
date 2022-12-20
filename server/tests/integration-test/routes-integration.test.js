@@ -3,11 +3,6 @@ import { app } from '../../index';
 import { ObjectId } from 'mongodb';
 import {expect, it,describe, jest, afterAll} from '@jest/globals';
 
-afterAll(done => {
-    app.destroy
-    done();
-});
-
 describe("Test get tasks", () => {
     jest.setTimeout(15000);
 
