@@ -8,11 +8,11 @@ pipeline {
             steps {
                 dir('server'){
                     echo 'Building backend dependencies..'
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 dir('client'){
                    echo 'Building frontend dependencies..'
-                   sh 'npm install'
+                   bat 'npm install'
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps{
                 dir('server'){
                     echo 'Testing..'
-                    sh 'npx jest --coverage'
+                    bat 'npx jest --coverage'
                 }
             }
         }

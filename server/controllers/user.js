@@ -36,7 +36,6 @@ export const getUser = async (req, res) => {
     }
 }
 
-
 export const signIn = async (req, res) => {
   const { email, password } = req.body
 
