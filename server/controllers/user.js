@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import { signUpError, errorMessage, fullName } from '../services/userService.js'
+import { calculateStartIndex, signUpError, errorMessage, fullName } from '../services/userService.js'
 
 import UserModel from '../models/userModel.js'
 
