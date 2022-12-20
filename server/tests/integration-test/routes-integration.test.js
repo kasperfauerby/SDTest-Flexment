@@ -1,17 +1,14 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import mongoose from "mongoose";
 import {expect, it,describe, jest, afterAll, beforeAll} from '@jest/globals';
 
-beforeAll(done => {
-    done()
+beforeAll(() => {
+   const server = app.listen(28123);
 })
 
-afterAll(done => {
-    // Closing the DB connection allows Jest to exit successfully.
-    mongoose.connection.close()
-    done()
+afterAll(() => {
+    server.close()
 })
 
 describe("Test get tasks", () => {
