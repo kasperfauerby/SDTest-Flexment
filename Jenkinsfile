@@ -20,7 +20,9 @@ pipeline {
             steps{
                 dir('server'){
                     echo 'Testing..'
-                    bat """echo "CONNECTION_URI=mongodb+srv://user:user@cluster0.rjqaazc.mongodb.net/?retryWrites=true&w=majority">.env"""
+                    bat """
+                    echo "CONNECTION_URL=mongodb+srv://user:user@cluster0.rjqaazc.mongodb.net/?retryWrites=true&w=majority">.env
+                    """
                     bat 'npx jest --coverage'
                 }
             }
