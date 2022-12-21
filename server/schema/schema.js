@@ -12,7 +12,7 @@ import {
   } from "graphql";
 
 
-//Task Type
+//Task Type 
 const TaskType = new GraphQLObjectType({
     name: "Task",
     fields: () => ({
