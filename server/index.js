@@ -15,7 +15,7 @@ dotenv.config();
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: true,
+    graphiql: true
   }));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }))

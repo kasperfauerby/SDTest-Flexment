@@ -11,7 +11,6 @@ import {
     GraphQLScalarType,
   } from "graphql";
 
-
 //Task Type 
 const TaskType = new GraphQLObjectType({
     name: "Task",
