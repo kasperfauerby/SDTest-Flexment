@@ -6,7 +6,6 @@ export function convertStringToArray(string) {
     return string.split(", ");
 }
 
-
 export const passwordCharConstrain = (password) => {
   let flag
 
