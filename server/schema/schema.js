@@ -36,7 +36,7 @@ const TaskType = new GraphQLObjectType({
   });
 
   const RootQuery = new GraphQLObjectType({
-    name: "RootQueryType",
+    name: "RootQueryType", 
     fields: {
       tasks: {
         type: new GraphQLList(TaskType),
