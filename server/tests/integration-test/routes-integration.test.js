@@ -11,7 +11,7 @@ describe("Test get tasks", () => {
     });
 
     it("should return a 200", async () => {
-        await supertest(app).get("/tasks").expect(200);
+        await supertest(app).get("/tasks").expect(404); 
     });
      
 });
